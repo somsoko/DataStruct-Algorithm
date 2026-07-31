@@ -1,6 +1,8 @@
 public class LinkedListStack {
     // 연결리스트를 스텍으로 사용
-    LinkedList stack = new LinkedList();
+    private LinkedList stack = new LinkedList();
+
+    // head를 top으로 사용
 
     public boolean isEmpty() {
         return stack.head() == null;
@@ -11,6 +13,7 @@ public class LinkedListStack {
         stack.insert(data,null);
     }
 
+    // top으로 사용하는 head에서 팝
     public int pop() {
         if(isEmpty()) {
             System.out.println("!empty!");
