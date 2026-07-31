@@ -1,6 +1,6 @@
 public class LinkedList {
     // 헤드 노드
-    protected Node head;
+    private Node head;
 
     // 단일 정수 데이터를 가지는 노드 객체
     public class Node {

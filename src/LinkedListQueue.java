@@ -35,6 +35,42 @@ public class LinkedListQueue {
         return result;
     }
 
+    /**
+     // 원형 연결리스트로 구현한 큐
+     // head를 마지막 노드를 가리키는 last로 사용 <- O(1)에 인큐, 디큐 가능
+     // head.link = front, head = rear
+
+
+    public void add(int data) {
+        if(isEmpty()) {
+            queue.insert(data,null);
+            queue.head().link = queue.head();
+        }
+        else {
+            queue.insert(data,queue.head());
+            queue.head = queue.head().link;
+        }
+    }
+
+    public int delete() {
+        if(isEmpty()) {
+            System.out.println("!empty!");
+            return -1;
+        }
+
+        int result = queue.head().link.data;
+        // 노드가 하나뿐
+        if (queue.head().link == queue.head()) {
+            queue.clear();
+        }
+        else {
+            queue.delete(queue.head());
+        }
+
+        return result;
+    }
+    */
+
     public void show() {
         queue.show();
     }
