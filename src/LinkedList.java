@@ -135,7 +135,10 @@ public class LinkedList {
     // 연결리스트 데이터 출력
     public void show() {
         for(Node n=head; n!=null; n=n.link) {
-            System.out.print(n.data+"->");
+            System.out.print(n.data);
+            if (n.link != null) {
+                System.out.print("->");
+            }
         }
         System.out.println();
     }
