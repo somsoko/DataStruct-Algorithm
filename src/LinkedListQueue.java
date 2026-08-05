@@ -35,7 +35,7 @@ public class LinkedListQueue {
         return result;
     }
 
-    /**
+    /*
      // 원형 연결리스트로 구현한 큐
      // head를 마지막 노드를 가리키는 last로 사용 <- O(1)에 인큐, 디큐 가능
      // head.link = front, head = rear

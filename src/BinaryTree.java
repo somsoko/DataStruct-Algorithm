@@ -2,7 +2,7 @@ import java.util.LinkedList;
 
 public class BinaryTree {
     // 단일 정수 데이터를 가지는 이진트리 노드
-    public class Node {
+    public static class Node {
         int data;
         Node left_child;
         Node right_child;
