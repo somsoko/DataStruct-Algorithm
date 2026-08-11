@@ -1,5 +1,7 @@
 package graph;
 
+import java.util.ArrayList;
+
 public class AdjacencyList {
     // 인접 리스트 노드
     private class VertexNode {
@@ -93,5 +95,23 @@ public class AdjacencyList {
         }
 
         return count;
+    }
+
+    /** 정점의 총 갯수 리턴 */
+    public int vertexCount() {
+        return list.length;
+    }
+
+    /** 정점과 연결된 이웃을 arrayList에 담아서 리턴 */
+    public Iterable<Integer> neighbors(int v) {
+        ArrayList<Integer> neighbors = new ArrayList<>();
+
+        VertexNode node = list[v];
+        while (node != null) {
+            neighbors.add(node.vertex);
+            node = node.link;
+        }
+
+        return neighbors;
     }
 }
