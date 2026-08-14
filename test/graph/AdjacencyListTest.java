@@ -2,7 +2,7 @@ package graph;
 
 public class AdjacencyListTest {
     public static void main(String[] args) {
-        AdjacencyList al = new AdjacencyList(4);
+        AdjacencyList al = new AdjacencyList(4,true);
 
         al.addEdge(0,1);
         al.addEdge(1,0);
