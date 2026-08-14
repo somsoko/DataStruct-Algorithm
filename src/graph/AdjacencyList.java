@@ -92,7 +92,7 @@ public class AdjacencyList {
 
     /** 정점 v로 들어오는 엣지 수 */
     public int inDegree(int v) {
-        if (directed) {
+        if (!directed) {
             return outDegree(v);
         }
 
