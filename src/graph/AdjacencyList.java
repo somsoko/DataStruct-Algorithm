@@ -4,13 +4,19 @@ import java.util.ArrayList;
 
 public class AdjacencyList {
     // 인접 리스트 노드
-    private class VertexNode {
+    public static class VertexNode {
         int vertex;
         VertexNode link;
+        int weight;
 
-        public VertexNode(int vertex, VertexNode link) {
+        public VertexNode(int vertex, VertexNode link, int weight) {
             this.vertex = vertex;
             this.link = link;
+            this.weight = weight;
+        }
+
+        public VertexNode(int vertex, VertexNode link) {
+            this(vertex,link,0);
         }
     }
 
@@ -27,10 +33,19 @@ public class AdjacencyList {
 
     /** (u -> v) 엣지 추가 */
     public void addEdge(int u, int v) {
-        list[u] = new VertexNode(v,list[u]);
+        list[u] = new VertexNode(v, list[u]);
 
         if (!directed) {
-            list[v] = new VertexNode(u,list[v]);
+            list[v] = new VertexNode(u, list[v]);
+        }
+    }
+
+    /** (u -> v) 가중치 엣지 추가 */
+    public void addEdge(int u, int v, int weight) {
+        list[u] = new VertexNode(v, list[u], weight);
+
+        if (!directed) {
+            list[v] = new VertexNode(u, list[v], weight);
         }
     }
 
@@ -53,6 +68,19 @@ public class AdjacencyList {
             previous = current;
             current = current.link;
         }
+    }
+
+    /** (u -> v) 엣지의 가중치 리턴 */
+    public int weight(int u, int v) {
+        VertexNode node = list[u];
+        while (node != null) {
+            if (node.vertex == v) {
+                return node.weight;
+            }
+            node = node.link;
+        }
+
+        return 0;
     }
 
     /** (u -> v) 엣지 존재 여부 리턴 */
