@@ -18,6 +18,18 @@ public class MinimumCostSpanningTreeTest {
 
 
         AdjacencyList mstK = mst.kruskal(graph);
+        System.out.print("kruskal:");
         bfs.bfs(mstK,0);
+        System.out.println();
+
+        System.out.print("prim:");
+        AdjacencyList mstP = mst.prim(graph);
+        bfs.bfs(mstP,0);
+        System.out.println();
+
+        System.out.print("sollin:");
+        AdjacencyList mstS = mst.sollin(graph);
+        bfs.bfs(mstS,0);
+        System.out.println();
     }
 }
